@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import qs from 'querystring'
 import '../../assets/css/play.less'
 
+
 class Play extends Component {
   constructor(){
     super()
@@ -78,14 +79,14 @@ class Play extends Component {
         <div className="changyuan">
           <div className="img-box">
             <img src={picUrl} alt=""/>
-            <i></i>
+            <i className="iconfont icon-iconset0481"></i>
           </div>
         </div>
         <div className="lyric">
           <ul>
             {
               lrcArr.map((item,index)=>{
-                return <li className={index == ind ? "active" :''}>
+                return <li className={index == ind ? "active" :''} key={index}>
                   {item}
                 </li>
               })

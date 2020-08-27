@@ -28,6 +28,7 @@
   transform: translateX(-50%);
 }
 .play .changyuan .img-box {
+  position: relative;
   margin: 0 auto;
   margin-top: 0.5rem;
   width: 1.96rem;
@@ -38,6 +39,14 @@
 .play .changyuan .img-box img {
   width: 1.96rem;
   height: 1.96rem;
+}
+.play .changyuan .img-box icon-iconset0481 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 0.5rem;
 }
 .play .lyric {
   position: absolute;
