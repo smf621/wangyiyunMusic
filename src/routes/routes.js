@@ -3,6 +3,7 @@ import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
 import Recommend from '../pages/Home/Recommend'
 import Hot from '../pages/Home/Hot'
+import Play from '../pages/Play/Play'
 import Search from '../pages/Home/Search'
 const routes = [
   {
@@ -25,7 +26,7 @@ const routes = [
       {
         path: '/home',
         redirect: '/home/recommend'
-      }
+      },
     ]
   },
   {
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/register',
     component: Register
+  },
+  {
+    path:'/play',
+    component:Play
   },
   {
     path: '/',

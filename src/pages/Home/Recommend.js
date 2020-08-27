@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/css/recommend.css'
+import SongList from '../../components/SongList'
+
 class Recommend extends Component {
   constructor() {
     super()
@@ -32,37 +34,26 @@ class Recommend extends Component {
     // console.log(this)
     let { recList, newList } = this.state
     return (
-      <div >
+      <div>
         <p className="title">推荐歌单</p>
         <ul className="recList">
           {
             recList.map((item, index) => {
               return <li key={item.id}>
                 <div>
+                  <i></i>
+                  <span></span>
+                </div>
+                <div>
                   <img src={item.picUrl} alt="" />
                 </div>
-                <p>{item.name}</p>
+                <p className="recname">{item.name}</p>
               </li>
             })
           }
         </ul>
         <p className="title">最新音乐</p>
-        <ul className="newList">
-          {
-            newList.map((item, index) => {
-              return <li key={item.id}>
-                <div>
-                  <p className="tit">{item.name}</p>
-                  <p className="name">
-                    {item.song.artists.map(son => {
-                      return son.name + ""
-                    })}-{item.name}
-                  </p>
-                </div>
-              </li>
-            })
-          }
-        </ul>
+        <SongList newList={newList} />
       </div>
     );
   }

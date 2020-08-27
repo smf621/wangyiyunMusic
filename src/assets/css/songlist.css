@@ -1,0 +1,18 @@
+ul.newList li{
+  margin: 0 0 0 .1rem;
+  height: .55rem;
+  border-bottom: .01rem solid #eee;
+}
+ul.newList li div{
+   padding: .06rem 0 ; 
+}
+ul.newList li p.tit{
+  font-size: .17rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+ ul.newList li p.name{
+  font-size: .12rem;
+  color:#888;
+}

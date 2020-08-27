@@ -15,15 +15,15 @@
  padding: .15rem 0;
  border-bottom: .01rem solid #eee;
 }
-.search ul{
+ul.hot{
   padding: 15px 10px 0;
 }
-.search ul h3{
+ul.hot h3{
   margin-bottom: 10px;
   font-size: .12rem;
   color:#666  
 }
-.search ul li{
+ul.hot li{
   display: inline-block;
   border:1px solid #eee;
   border-radius: .16rem;
@@ -35,3 +35,5 @@
   line-height: .32rem;
   color: #333;
 }
+
+
