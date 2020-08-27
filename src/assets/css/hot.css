@@ -1,6 +1,18 @@
+.hot{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hotlist{
+    flex: 1;
+    overflow: hidden;
+}
+
+
+
 .hot .banner{
   height:1.45rem;
-  widht:100%;
+  width:100%;
 }
 .hot .banner img{
   width:100%;
@@ -8,8 +20,10 @@
 }
 .hot ul{
   width: 100%;
-  height: .55rem;
+
 }
+
+
 .hot ul li{
   display: flex;
 }

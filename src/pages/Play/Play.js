@@ -14,6 +14,8 @@ class Play extends Component {
       lrcArr: [], //歌词数组
       timeArr: [], // 时间数组
       ind:0,//默认显示第一句歌词
+      flag:true,//歌曲播放按钮是否显示
+      top:'',
     }
   }
 
@@ -69,24 +71,60 @@ class Play extends Component {
     let b = str.split(':')
     return parseInt(b[0]) * 60 + parseFloat(b[1])
   }
+  //播放音乐
+  play(){
+    if(this.audio.paused){//暂停状态
+      this.audio.play()
+      this.setState({
+        flag:false
+      })
+    }else{
+      this.audio.pause()
+      this.setState({
+        flag:true
+      })
+    }
+  }
+  update(){
+    // console.log(this.audio.currentTime);
+    let current = this.audio.currentTime
+    let {timeArr} = this.state
+    let i = timeArr.findIndex((item,index)=>{
+      //当前时间大于 数组的时间并且小于后一项的时候
+      return current > item && current < timeArr[index +1] 
+    })
+    if(i == -1){
+      i=0
+    }
+    let top = -i * 30 + "px"
+    this.setState({
+      top:top,
+      ind:i
+    })
+
+    
+  }
 
   render() {
-    let {picUrl,bgStyle,url,lrcArr,ind} = this.state
+    let {picUrl,bgStyle,url,lrcArr,ind,flag,top} = this.state
     return (
       <div className="play" >
         <div className="bg" style={bgStyle}></div>        
         <div className="changbi"></div>
-        <div className="changyuan">
-          <div className="img-box">
+          {flag && <i className="iconfont icon-iconset0481" onClick={this.play.bind(this)}></i>}
+        <div className={flag ? "changyuan stop" : "changyuan"} >
+          <div className="img-box" onClick={this.play.bind(this)}>
             <img src={picUrl} alt=""/>
-            <i className="iconfont icon-iconset0481"></i>
+           
           </div>
         </div>
         <div className="lyric">
-          <ul>
+          <ul style={{marginTop:top}}>
             {
               lrcArr.map((item,index)=>{
-                return <li className={index == ind ? "active" :''} key={index}>
+                return <li 
+                className={index == ind ? "active" :''} key={index}
+                >
                   {item}
                 </li>
               })
@@ -94,7 +132,12 @@ class Play extends Component {
           </ul>
         </div>
 
-        <audio src={url}></audio>
+        <audio 
+        onTimeUpdate={this.update.bind(this)}
+        ref={(el)=>this.audio =el} 
+        src={url}
+        > 
+        </audio>
 
       </div>
     );

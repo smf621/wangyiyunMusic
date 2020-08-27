@@ -6,6 +6,7 @@
 .play .bg {
   width: 100%;
   height: 100%;
+  transform: scale(1.5);
 }
 .play .changbi {
   background: url('https://s3.music.126.net/mobile-new/img/needle-ip6.png?be4ebbeb6befadfcae75ce174e7db862=') no-repeat center center;
@@ -17,15 +18,28 @@
   height: 1.37rem;
   z-index: 999;
 }
+.play .icon-iconset0481 {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 0.5rem;
+  z-index: 999;
+}
 .play .changyuan {
   background: url('https://s3.music.126.net/mobile-new/img/disc-ip6.png?69796123ad7cfe95781ea38aac8f2d48=') no-repeat center center;
   background-size: 2.96rem 2.96rem;
   width: 2.96rem;
   height: 2.96rem;
   position: fixed;
-  top: 0.5rem;
+  top: 0.6rem;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -1.48rem;
+  animation: rotate 15s linear infinite;
+}
+.play .changyuan.stop {
+  animation-play-state: paused;
 }
 .play .changyuan .img-box {
   position: relative;
@@ -40,14 +54,6 @@
   width: 1.96rem;
   height: 1.96rem;
 }
-.play .changyuan .img-box icon-iconset0481 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 0.5rem;
-}
 .play .lyric {
   position: absolute;
   top: 4rem;
@@ -56,13 +62,24 @@
   left: 0.5rem;
   overflow: hidden;
 }
-.play .lyric li {
+.play .lyric ul {
+  transition: margin-top 0.3s;
+}
+.play .lyric ul li {
   list-style: none;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   height: 0.3rem;
   line-height: 0.3rem;
 }
-.play .lyric li.active {
+.play .lyric ul li.active {
   color: #fff;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

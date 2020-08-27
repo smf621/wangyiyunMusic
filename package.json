@@ -16,6 +16,7 @@
     "babel-loader": "8.1.0",
     "babel-plugin-named-asset-import": "^0.3.6",
     "babel-preset-react-app": "^9.1.2",
+    "better-scroll": "^2.0.1",
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "css-loader": "3.4.2",
@@ -65,7 +66,8 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.11.0",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "yarn": "^1.22.5"
   },
   "scripts": {
     "start": "node scripts/start.js",
