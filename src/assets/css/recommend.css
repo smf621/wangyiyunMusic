@@ -1,0 +1,44 @@
+ul.recList{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .1rem;
+  margin-bottom: .2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+ul.recList li{
+  width: 33%;
+}
+.title{
+  padding-left: .12rem;
+  border-left: .02rem solid #db6968;
+  font-size: .17rem;
+}
+ul.recList p{
+  padding:.06rem .02rem 0 .06rem;
+  font-size: .13rem;
+}
+.recList img{
+  width: 100%;
+}
+
+.newList li{
+  margin: 0 0 0 .1rem;
+  height: .55rem;
+  border-bottom: .01rem solid #eee;
+}
+.newList li div{
+   padding: .06rem 0 ; 
+}
+.newList li p.tit{
+  font-size: .17rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.newList li p.name{
+  font-size: .12rem;
+  color:#888
+}
+
+

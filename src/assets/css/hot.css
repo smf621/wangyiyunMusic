@@ -1,0 +1,46 @@
+.hot .banner{
+  height:1.45rem;
+  widht:100%;
+}
+.hot .banner img{
+  width:100%;
+  height:100%;
+}
+.hot ul{
+  width: 100%;
+  height: .55rem;
+}
+.hot ul li{
+  display: flex;
+}
+.hot ul li div.num{
+  width: .45rem;
+  line-height: .51rem;
+  text-align: center;
+  font-size: .14rem;
+}
+.hot ul li:nth-child(1) div.num,
+.hot ul li:nth-child(2) div.num,
+.hot ul li:nth-child(3) div.num{
+  color: red;
+}
+.hot ul li div.right{
+  padding:.06rem 0;
+  width: 100%;
+  border-bottom: .01rem solid #eee;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.hot ul li div.right p.name{
+  font-size: .17rem;
+
+}
+.hot ul li div.right p.name span{
+  color: #888;
+}
+.hot ul li div.right p.dec{
+  font-size: .12rem;
+  color:#888;
+
+}
